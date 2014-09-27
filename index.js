@@ -19,18 +19,18 @@ module.exports = function callbackify (fn) {
 	}
 
 	return function () {
-		var argsL = arguments.length;
-		var args = argsL > 1 ? [].slice.call(arguments, 0, argsL - 1) : [];
-		var cb = arguments[argsL - 1];
+		var argsLen = arguments.length;
+		var args = argsLen > 1 ? [].slice.call(arguments, 0, argsLen - 1) : [];
+		var callback = arguments[argsLen - 1];
 
-		if (typeof cb !== 'function') {
+		if (typeof callback !== 'function') {
 			throw new Error('Must pass callback function');
 		}
 
 		try {
-			cb(null, fn.apply(this, args));
+			callback(null, fn.apply(this, args));
 		} catch (_err) {
-			cb(_err);
+			callback(_err);
 		}
 	};
 };
