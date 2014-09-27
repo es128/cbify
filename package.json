@@ -1,0 +1,35 @@
+{
+  "name": "fn-callbackify",
+  "version": "1.0.0",
+  "description": "Wraps synchronous functions with a callback-style API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/es128/fn-callbackify"
+  },
+  "keywords": [
+    "callback",
+    "sync",
+    "async",
+    "wrap",
+    "utils",
+    "return",
+    "adapt",
+    "convert",
+    "fn",
+    "function",
+    "method"
+  ],
+  "author": "Elan Shanker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/es128/fn-callbackify/issues"
+  },
+  "homepage": "https://github.com/es128/fn-callbackify",
+  "dependencies": {
+    "fn-args": "^1.0.0"
+  }
+}
