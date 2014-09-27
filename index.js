@@ -10,7 +10,11 @@ module.exports = function callbackify (fn) {
 	var origArgs = fnArgs(fn);
 	var lastArg = origArgs[origArgs.length - 1];
 
-	if (lastArg.toLowerCase().indexOf('callback') !== -1 || lastArg === 'cb') {
+	if (
+		origArgs.length &&
+		lastArg.toLowerCase().indexOf('callback') !== -1 ||
+		lastArg === 'cb'
+	) {
 		return fn;
 	}
 
