@@ -22,15 +22,22 @@ module.exports = function callbackify (fn) {
 		var argsLen = arguments.length;
 		var args = argsLen > 1 ? [].slice.call(arguments, 0, argsLen - 1) : [];
 		var callback = arguments[argsLen - 1];
+		var result;
 
 		if (typeof callback !== 'function') {
 			throw new Error('Must pass callback function');
 		}
 
 		try {
-			callback(null, fn.apply(this, args));
+			result = fn.apply(this, args);
 		} catch (_err) {
 			callback(_err);
+		}
+
+		if (result instanceof Error) {
+			callback(result);
+		} else {
+			callback(null, result);
 		}
 	};
 };
