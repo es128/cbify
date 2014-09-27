@@ -4,7 +4,8 @@
   "description": "Wraps synchronous functions with a callback-style API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "browserify index.js --standalone callbackify -o callbackify.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,8 @@
   "homepage": "https://github.com/es128/fn-callbackify",
   "dependencies": {
     "fn-args": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^5.12.1"
   }
 }
