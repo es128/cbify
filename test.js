@@ -42,6 +42,22 @@ it('should preserve functions that already expect a callback', function () {
 	});
 });
 
+it('should pass errors to callback', function () {
+	function throwsErr () { throw new Error('oops'); }
+	function returnsErr () { return new Error('darn'); }
+
+	callbackify(returnsErr)(function (err) {
+		assert(err instanceof Error, 'returned error not returned');
+	});
+
+	assert.doesNotThrow(function () {
+		callbackify(throwsErr)(function (err) {
+			assert(err instanceof Error, 'thrown error not returned');
+		});
+	});
+
+});
+
 it('should preserve function properties', function () {
 	sum.foo = 'bar';
 	var sumCb = callbackify(sum);
