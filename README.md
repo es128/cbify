@@ -51,3 +51,19 @@ The `this` context the callbackify'd function is called with will be preserved
 for the underlying function. Feel free to use `bind`, `apply`, etc as you would
 have before implementing callbackify.
 
+## Similar modules
+
+I was surprised I couldn't find a pre-existing module that did this. I did find
+a few that almost did it, but were ruled out for slight differences.
+
+* [__sinless__](https://github.com/thlorenz/sinless):
+  Uses `setImmediate`, causing the wrapped function to always return
+  asynchronously, even though the underlying method may still be blocking.
+* [__ifyify__](https://github.com/Tarabyte/ifyify):
+  The `callbackify` method provided by this module is only different in that it
+  wraps the function with a continuation-style API, meaning that `err` will now
+  always be the first argument.
+* [__wrap-fn__](https://github.com/MatthewMueller/wrap-fn):
+  Another API style. Expects the callback at the time the function is being
+  wrapped so the resulting function signature stays the same.
+
