@@ -9,3 +9,8 @@ it('should make a sync function pass return to a callback', function () {
 	sumCb(32, 96, function (err, result) { answer = result; });
 	assert.equal(answer, 128);
 });
+
+it('should throw if not given a function', function () {
+	assert.throws(function () { callbackify(''); });
+});
+
