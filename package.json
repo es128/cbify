@@ -34,7 +34,8 @@
   },
   "homepage": "https://github.com/es128/fn-callbackify",
   "dependencies": {
-    "fn-args": "^1.0.0"
+    "fn-args": "^1.0.0",
+    "wrappy": "^1.0.1"
   },
   "devDependencies": {
     "browserify": "^5.12.1"

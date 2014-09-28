@@ -1,8 +1,9 @@
 'use strict';
 
+var wrappy = require('wrappy');
 var fnArgs = require('fn-args');
 
-module.exports = function callbackify (fn) {
+module.exports = wrappy(function callbackify (fn) {
 	if (typeof fn !== 'function') {
 		throw new TypeError('Expected a function');
 	}
@@ -40,4 +41,4 @@ module.exports = function callbackify (fn) {
 			callback(null, result);
 		}
 	};
-};
+});

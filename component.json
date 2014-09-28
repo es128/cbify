@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "sindresorhus/fn-args": "^1.0.0"
+    "sindresorhus/fn-args": "^1.0.0",
+    "npm/wrappy": "^1.0.1"
   }
 }
