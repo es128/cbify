@@ -32,13 +32,14 @@ module.exports = wrappy(function callbackify (fn) {
 		try {
 			result = fn.apply(this, args);
 		} catch (_err) {
-			callback(_err);
+			result = _err;
+		} finally {
+			if (result instanceof Error) {
+				callback(result);
+			} else {
+				callback(null, result);
+			}
 		}
 
-		if (result instanceof Error) {
-			callback(result);
-		} else {
-			callback(null, result);
-		}
 	};
 });
