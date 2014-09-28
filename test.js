@@ -42,3 +42,8 @@ it('should preserve functions that already expect a callback', function () {
 	});
 });
 
+it('should preserve function properties', function () {
+	sum.foo = 'bar'
+	var sumCb = callbackify(sum);
+	assert.equal(sumCb.foo, 'bar');
+});
