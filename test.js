@@ -20,3 +20,25 @@ it('should throw if wrapped function not given a callback', function () {
 	assert.throws(function () { sumCb(32, 96); });
 });
 
+it('should preserve functions that already expect a callback', function () {
+	function cbFunc1 (a, b, callback) { callback(null, a + b); }
+	function cbFunc2 (foo, cb) { cb(null, foo); }
+	function cbFunc3 (callback_) { callback_(); }
+	function cbFunc4 (bar, badlyNamedCb) { badlyNamedCb(null, bar); }
+
+	callbackify(cbFunc1)(0, 1, function (err, res) { assert.equal(res, 1); });
+
+	var res2 = callbackify(cbFunc2)(2, function (err, res) {
+		assert.equal(res, 2);
+	});
+	assert.strictEqual(res2, undefined);
+
+	var res3;
+	callbackify(cbFunc3)(function () { res3 = true; });
+	assert.ok(res3);
+
+	callbackify(cbFunc4)(4, function (err, res) {
+		assert.equal(res, undefined);
+	});
+});
+
