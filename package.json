@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Wraps synchronous functions with a callback-style API",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "mocha",
     "prepublish": "browserify index.js --standalone callbackify -o callbackify.js"
