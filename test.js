@@ -43,7 +43,14 @@ it('should preserve functions that already expect a callback', function () {
 });
 
 it('should preserve function properties', function () {
-	sum.foo = 'bar'
+	sum.foo = 'bar';
 	var sumCb = callbackify(sum);
 	assert.equal(sumCb.foo, 'bar');
+});
+
+it('should preserve this context', function () {
+	var hasFoo = callbackify(function () { return 'foo' in this; });
+
+	hasFoo(function (err, res) { assert(!res); });
+	hasFoo.call({foo: 1}, function (err, res) { assert.equal(res, true); })
 });
