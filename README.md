@@ -67,3 +67,6 @@ a few that almost did it, but were ruled out for slight differences.
   Another API style. Expects the callback at the time the function is being
   wrapped so the resulting function signature stays the same.
 
+## License
+
+[ISC](https://raw.github.com/es128/fn-callbackify/master/LICENSE)
