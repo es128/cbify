@@ -19,6 +19,7 @@
     "sync",
     "async",
     "wrap",
+    "wrapper",
     "utils",
     "return",
     "adapt",
