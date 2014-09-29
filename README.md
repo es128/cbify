@@ -67,6 +67,21 @@ a few that almost did it, but were ruled out for slight differences.
   Another API style. Expects the callback at the time the function is being
   wrapped so the resulting function signature stays the same.
 
+## What about [Z͡alg̨ó](http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony)?
+
+This makes synchronous functions pass their result to a callback synchronously.
+It's an important feature of this module, providing the ability to adapt some
+async APIs to also provide a sync option with minimal code changes. This is
+done knowingly and is consistent, so it does not release Zalgo. 
+
+However, you do have to be careful for ͟h͞e͘ ̢Wa͜it̛s̨ ͡B̨e͡h̛in̨d ͠The̷ W͏a͝l͏ĺ.
+If you do not know whether the functions you're passing into callbackify are
+sync or async, and you are otherwise treating them identically, then you may be
+́un͘l͜͝e҉a͟҉̨sh̕i̶͜҉n͏̧̕g̢̕ ̧T̷͞ḩe͟ ͜N̢̛͢e̛͟͠z̨͟ṕ̵̨e͟͡͏r̡̀d̨i̧̧a̢͢n ̡hi҉͜v̷e͢-̡͘͘mi̵͞nd̀ 
+̡of̀ ͢͝cḩ̕a̶̶o̷͜s͘͞.҉͝. In that case, you may want to use
+[sinless](https://github.com/thlorenz/sinless) instead, or use this together
+with [dezalgo](https://github.com/npm/dezalgo).
+
 ## License
 
 [ISC](https://raw.github.com/es128/fn-callbackify/master/LICENSE)
