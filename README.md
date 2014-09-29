@@ -1,4 +1,4 @@
-# fn-callbackify
+# cbify
 
 Wraps synchronous functions with a callback-style API so they can match their
 async brethren. 
@@ -11,27 +11,27 @@ values passed to the callback as a return value.
 
 **npm**
 ```sh
-npm install --save fn-callbackify
+npm install --save cbify
 ```
 
 **Bower**
 ```sh
-bower install --save fn-callbackify
+bower install --save cbify
 ```
 The browser build for bower includes a UMD wrapper which adapts to various
-module systems, or exposes a `callbackify` global if none are present.
+module systems, or exposes a `cbify` global if none are present.
 
 **Duo**
 ```js
-var callbackify = require('es128/fn-callbackify')
+var cbify = require('es128/cbify')
 ```
 
 ## Usage
 
 ```js
-var callbackify = require('fn-callbackify');
+var cbify = require('cbify');
 
-var sum = callbackify(function (a, b) {
+var sum = cbify(function (a, b) {
 	return a + b;
 });
 
@@ -47,9 +47,9 @@ console.log(answer); // 128
 If provided a function whose last named argument is `cb` or `callback` (or even
 if it just contains `callback`), then that function will be returned unchanged.
 
-The `this` context the callbackify'd function is called with will be preserved
+The `this` context the cbify'd function is called with will be preserved
 for the underlying function. Feel free to use `bind`, `apply`, etc as you would
-have before implementing callbackify.
+have before implementing cbify.
 
 ## Similar modules
 
@@ -75,13 +75,13 @@ async APIs to also provide a sync option with minimal code changes. This is
 done knowingly and is consistent, so it does not release Zalgo. 
 
 However, you do have to be careful for ͟h͞e͘ ̢Wa͜it̛s̨ ͡B̨e͡h̛in̨d ͠The̷ W͏a͝l͏ĺ.
-If you do not know whether the functions you're passing into callbackify are
-sync or async, and you are otherwise treating them identically, then you may be
+If you do not know whether the functions you're passing into cbify are sync or
+async, and you are otherwise treating them identically, then you may be
 ́un͘l͜͝e҉a͟҉̨sh̕i̶͜҉n͏̧̕g̢̕ ̧T̷͞ḩe͟ ͜N̢̛͢e̛͟͠z̨͟ṕ̵̨e͟͡͏r̡̀d̨i̧̧a̢͢n ̡hi҉͜v̷e͢-̡͘͘mi̵͞nd̀ 
 ̡of̀ ͢͝cḩ̕a̶̶o̷͜s͘͞.҉͝. In that case, you may want to use
-[sinless](https://github.com/thlorenz/sinless) instead, or use this together
+[sinless](https://github.com/thlorenz/sinless) instead, or use cbify together
 with [dezalgo](https://github.com/npm/dezalgo).
 
 ## License
 
-[ISC](https://raw.github.com/es128/fn-callbackify/master/LICENSE)
+[ISC](https://raw.github.com/es128/cbify/master/LICENSE)

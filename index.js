@@ -3,7 +3,7 @@
 var wrappy = require('wrappy');
 var fnArgs = require('fn-args');
 
-module.exports = wrappy(function callbackify (fn) {
+module.exports = wrappy(function cbify (fn) {
 	if (typeof fn !== 'function') {
 		throw new TypeError('Expected a function');
 	}
