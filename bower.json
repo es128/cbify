@@ -1,0 +1,36 @@
+{
+  "name": "cbify",
+  "version": "1.0.0",
+  "main": "cbify.js",
+  "homepage": "https://github.com/es128/cbify",
+  "authors": [
+    "Elan Shanker"
+  ],
+  "description": "Wraps synchronous functions with a callback-style API",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "callback",
+    "cb",
+    "sync",
+    "async",
+    "wrap",
+    "wrapper",
+    "utils",
+    "return",
+    "adapt",
+    "convert",
+    "fn",
+    "function",
+    "method"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test*"
+  ]
+}
