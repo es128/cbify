@@ -1,4 +1,4 @@
-# cbify
+# cbify [![Build Status](https://travis-ci.org/es128/cbify.svg?branch=master)](https://travis-ci.org/es128/cbify)
 
 Wraps synchronous functions with a callback-style API so they can match their
 async brethren. 
