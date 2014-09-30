@@ -42,19 +42,5 @@
   "devDependencies": {
     "browserify": "^5.12.1",
     "mocha": "^1.21.4"
-  },
-  "testling": {
-    "harness": "mocha-bdd",
-    "files": "test.js",
-    "browsers": [
-      "ie/6..latest",
-      "ff/5", "firefox/latest",
-      "chrome/10", "chrome/latest",
-      "safari/5.1", "safari/latest",
-      "opera/12",
-      "iphone/latest",
-      "ipad/latest",
-      "android-browser/latest"
-    ]
   }
 }
